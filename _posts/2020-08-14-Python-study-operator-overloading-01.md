@@ -1,9 +1,7 @@
 ---
 layout: post
-title: 전문가를 위한 Python (p.465~484)
+title: 전문가를 위한 Python (p.465~490)
 ---
-
-2020.08.04 19:00 ~ 20:00
 
 Vector(3, 4) == [3, 4]가 True여야 할까 False여야 할까.
 의도에 따라 다름.
@@ -114,3 +112,24 @@ TypeError: object of type 'zip' has no len()
 ```
 
 object에서 상속한 `__ne__` method가 `__eq__`가 구현되어 있고 이 결과가 NotImplemented가 아니라면 `__eq__`의 반대 값을 return해 주므로 별도로 `__ne__`를 구현하지 않아도 동작한다.
+
+#### 복합 할당 연산자
+
+in-place 연산자가 구현되어있지 않은 경우, a += b를 a = a+b와 동일하게 평가. 따라서 `__add__` method가 구현되어 있으면 += 연산자가 작동하게 됨.
+별도로 구현하기 위해서는 `__iadd__`등의 in place 연산자를 구현한다. 새로운 객체를 생성하지 않고 피연산자를 직접 변경한다.
+왼쪽 연산자의 내용이 갱신되므로 왼쪽 객체의 타입을 따라갈 것임이 명백하다.
+
+```python
+    def __iadd__(self, other):
+        if isinstance(other, Tombola):
+            other_iterable = other.inspect()
+        else:
+            try:
+                other_iterable = iter(other)  # other를 interable로 만든다
+            except TypeError:
+                self_cls = type(self).__name__
+                msg = "right operand in += must be {!r} or an iterable"
+                raise TypeError(msg.format(self_cls))  # 저 !r 자리에 type의 name이 들어갈 것.
+            self.load(other_iterable)  # exception에 걸리지 않은 경우 load 함수에 넣어서 추가하고
+            return self  # self를 리턴한다. 복합 할당 연산자의 특징!! self 반환!!
+```
