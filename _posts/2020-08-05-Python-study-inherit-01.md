@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 전문가를 위한 Python (p.439~455)
+categories: python
 ---
 
 2020.08.05 12:40~13:30

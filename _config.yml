@@ -6,6 +6,7 @@ url:                 https://gayuna.github.io
 baseurl:             ''
 paginate:            5
 permalink:           pretty
+category_dir:       category/
 
 # About/contact
 author:

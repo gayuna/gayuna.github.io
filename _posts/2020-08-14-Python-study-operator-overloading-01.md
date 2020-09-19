@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 전문가를 위한 Python (p.465~490)
+categories: python
 ---
 
 Vector(3, 4) == [3, 4]가 True여야 할까 False여야 할까.
