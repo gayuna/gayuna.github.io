@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 전문가를 위한 Python (p.499~524)
+title: 전문가를 위한 Python (p.499~539)
 categories: python
 ---
 
