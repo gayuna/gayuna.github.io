@@ -86,3 +86,28 @@ def exc_handling():
             print('coroutine received...', x)  # 그 외의 경우는 여기로 들어옴.
     raise RuntimeError('FATAL ERROR')  # except로 잡지 않은 error는 이쪽으로. 들어오지 말아야 함. 에러가 처리되길 원한다면 while문을 try~ finally 구문 안에 넣어서 finally 단에서 처리 되도록 해야 한다.
 ```
+
+#### yield from
+
+* 다른 언어의 await와 비슷.
+
+```python
+>>> def gen1():
+...     for c in 'AB'L
+...         yield c
+...     for i in range(1, 3):
+...         yield i
+...
+>>> def gen2():
+...     yield from 'AB'  # gen2가 yield from 'AB'구문을 실행하면 'AB'이 값을 생성해 gen2를 호출한 값에 반환. 실질적으로 'AB'가 직접 호출자를 이끄는 것. 그러는 동안 gen2는 'AB'가 종료될 때까지 실행을 중단함. - 책이 쓰여진 시점에서는 PEP 492에서 async과 await 구문을 사용한 코루틴이 제안된 상태임.
+...     yield frome range(1, 3)
+,,,
+>>>
+```
+
+* yield from의 가치는 중첩된 제너레이터를 복잡하게 사용할 때에 나타남.(PEP 380 - 하위 제너레이터에 위임하기 위한 구문)
+* yield from의 특징은 가장 바깥족 호출자와 가장 안에 있는 하위 제너레이터 사이에 양방향 채널을 열어준다는 것.
+* `대표 제너레이터 - delegating generator` yield from <반복형> 표현식을 담고 있는 제너레이터 함수
+* `하위 제너레이터 - subgenerator` yield from 표현식 중 <반복형>에서 가져 오는 제너레이터.
+* `호출자 - caller` 대표 제너레이터를 호출하는 코드
+
