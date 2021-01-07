@@ -1,11 +1,12 @@
 ---
 layout: post
-title: 전문가를 위한 Python (p.569~)
+title: 전문가를 위한 Python (p.569~598)
 categories: python
 ---
 
 2020.11.17  
-2020.11.24
+2020.11.24  
+2020.12.25  
 
 #### Coroutine의 네가지 상태
 
@@ -93,7 +94,7 @@ def exc_handling():
 
 ```python
 >>> def gen1():
-...     for c in 'AB'L
+...     for c in 'AB':
 ...         yield c
 ...     for i in range(1, 3):
 ...         yield i
@@ -106,8 +107,41 @@ def exc_handling():
 ```
 
 * yield from의 가치는 중첩된 제너레이터를 복잡하게 사용할 때에 나타남.(PEP 380 - 하위 제너레이터에 위임하기 위한 구문)
-* yield from의 특징은 가장 바깥족 호출자와 가장 안에 있는 하위 제너레이터 사이에 양방향 채널을 열어준다는 것.
+* yield from의 특징은 가장 바깥 쪽 호출자와 가장 안에 있는 하위 제너레이터 사이에 양방향 채널을 열어준다는 것.
 * `대표 제너레이터 - delegating generator` yield from <반복형> 표현식을 담고 있는 제너레이터 함수
 * `하위 제너레이터 - subgenerator` yield from 표현식 중 <반복형>에서 가져 오는 제너레이터.
 * `호출자 - caller` 대표 제너레이터를 호출하는 코드
 
+```python
+Result = namedtuple('Result','count_average')
+
+# 하위 제네레이터
+def averager():
+    total = 0.0
+    count = 0
+    average = None
+    while True:
+        term = yield
+        if term is None: 
+            break
+        total += term
+        count += 1
+        average = total / count
+    return Result(count, average)
+
+# 대표 제네레이터
+def grouper(results, key):
+    while True:
+        results[key] = yield from averager()
+
+# 호출자
+def main(def):
+    results = {}
+    for key, value in data.items():
+        group = grouper(results, key)
+        next(group)  # 한번은 next 해서 제네레이터 기동시킴
+        for value in values:
+            group.send(value)  # send를 해서 보낸 value는 grouper를 통과하여 yield from으로 이어전 averager의 yield로 감
+            # 이 send되는 과정을 grouper는 보지 못함.
+        group.send(None)  # 마지막으로 None을 보내서 종료시키면 averager가 종료되어 Result가 리턴되어 yield from 자리로 들어가서 results[key]에 할당됨
+```
