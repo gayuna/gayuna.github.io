@@ -1,7 +1,7 @@
 ---
 layout: post
 title: OPIC AL 후기
-categories: Daily
+categories: etc
 ---
 
 9월에 시작, 12월 초에 AL 획득했습니다.
