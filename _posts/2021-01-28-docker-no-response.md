@@ -1,7 +1,7 @@
 ---
 layout: post
 title: docker command가 먹히지 않을 때
-categories: etc
+categories: tinytip
 ---
 
 리눅스 머신을 재시작 했을 때, docker 커맨드가 먹히지 않는 경우가 있다.
