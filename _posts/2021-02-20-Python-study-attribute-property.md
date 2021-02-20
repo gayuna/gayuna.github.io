@@ -5,6 +5,7 @@ categories: python
 ---
 
 2021.01.31
+2021.02.07
 
 #### feed['Schedule']['evnets'][40]['name']보다 feed.Schedule.events[40].name
 
@@ -65,4 +66,29 @@ class FrozenJSON:
             return getattr(self.__data. name)
         else:
             return FrozenJSON(self.__data[name])  # 이제 그냥 생성자를 호출하면 재귀적으로 동착하게 된다.
+```
+
+이와 같이 구조화 했을 때의 문제는 검색 등이 쉽지 않다는 것. `feed.Schedule.events[40].speakrs`는 2471, 5199를 가지고 있지만 speakers는 이 번호대로 인덱싱 되지 않고 serial 속성의 값으로 정의되어 있기 때문에 하나씩 탐색해야 한다. venue 번호도 마찬가지.
+
+이번에는 표준 모듈 pickle / shelves를 이용해서 위와 같은 문제를 해결해본다. [pickle](https://docs.python.org/ko/3/library/pickle.html)은 파이썬 객체 직렬화 포맷이고 [shelve](https://docs.python.org/ko/3/library/shelve.html) 안에 보관된다.
+
+위에서 JSON 파일을 읽는 class를 만들었다면, 아래 예시는 JSON 파일을 읽어 shelve.Shelf에 저장한다. key는 event.33950과 같이 레코드 유형과 일련번호의 형태로, 값은 Record class의 객체로 한다.
+
+```python
+DB_NAME = 'data/schedule1_db'
+CONFERENCE = 'conference.115'
+
+class Record:
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)  # 객체의 속성들은 __dict__에 들어있는데 이 __dict__ 자체를 업데이트 하는 방법으로 우리가 저장하고 싶은 속성을 가지게 한다.
+    
+def load_db(db):
+    raw_data = osconfeed.load()
+    
+    for collection, rec_list in raw_data['Schedule'].items():
+        record_type = collection[:-1]  # record_type은 'event'와 같은 속성들
+        for record in rec_list:
+            key = '{}.{}'.format(record_type, record['serial'])  # event.33950과 같은 값을 만들어 key로 쓴다.
+            record['serial'] = key  # 이 string으로 된 key로 serial field를 갱신하고
+            db[key] = Record(**record)  # record로 Record 객체를 만들어 DB에 저장한다.
 ```
