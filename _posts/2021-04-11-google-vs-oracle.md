@@ -5,7 +5,16 @@ categories:
   - Translation
 tags:
   - 오픈소스
+  - 구글
+  - 오라클
+  - 공정사용
+  - google
+  - oracle
+  - fairuse
+  - java
+  - API
 ---
+
 `Disclaimer : 저는 법도 Java도 전문가가 아닙니다. 아래 내용을 사실과 다를 수 있으며 저는 그에 대한 책임을 지지 않습니다. 정확한 내용은 원본 문서를 참고해주세요.`
 
 #### 배경
