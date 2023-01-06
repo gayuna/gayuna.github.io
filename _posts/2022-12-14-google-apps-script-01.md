@@ -1,5 +1,5 @@
 ---
-title: "Google Apps Script - Gmail에서 안읽은 메일 제목 스프레드 시트에 정리하기"
+title: Google Apps Script : Gmail에서 안읽은 메일 제목 스프레드 시트에 정리하기
 categories:
   - GAS
 tags:
