@@ -60,9 +60,9 @@ author:
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Hello, Stranger"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://gayuna.github.io"
+    - label: "LinkedIn"
+      icon: "fas fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/gayuna"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/gayuna"
