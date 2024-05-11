@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "gayuna"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Hello, Stranger"
+  bio    : "Hello, gayuna!"
   links:
     - label: "LinkedIn"
       icon: "fas fa-fw fa-linkedin"
