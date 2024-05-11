@@ -1,0 +1,100 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+\usepackage[scale=0.915]{geometry}
+\usepackage{import}
+\usepackage{multicol}
+\usepackage{import}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\name{Gayoun}{Han}
+\newcommand*{\customcventry}[7][.13em]{
+\begin{tabular}{@{}l}
+{\bfseries #4} \
+{\itshape #3}
+\end{tabular}
+\hfill
+\begin{tabular}{l@{}}
+{\bfseries #5} \
+{\itshape #2}
+\end{tabular}
+\ifx&#7&%
+\else{\
+\begin{minipage}{\maincolumnwidth}%
+\small#7%z
+\end{minipage}}\fi%
+\par\addvspace{#1}}
+\begin{document}
+\makecvtitle
+\vspace*{-16mm}
+\begin{center}\textbf{Experienced software developer with a passion for collaboration and diverse tech stacks.}\end{center}
+\begin{center}
+\begin{tabular}{ c c c }
+\faMobile\enspace +82 1022392233 & \enspace hello.gayuna@gmail.com & \enspace \faHome\enspace Seoul, South Korea \\
+\faLinkedin\enspace \color{blue} \href{https://www.linkedin.com/in/gayuna}{in/gayuna} &
+\faGithub\enspace \color{blue} \href{https://gayuna.github.io}{gayuna.github.io} & \enspace {$\mathbb{X}$}\enspace \color{blue} \href{https://x.com/hello\_gayuna}{x.com/hello\_gayuna}
+\end{tabular}
+\end{center}
+\section{Profile}
+{Experienced in integrating internal and external systems,
+adept at working with diverse tech stacks.}
+
+\section{Skills}
+{\begin{itemize}[label=\textbullet]
+\item {\textbf{Programming Language:} C/C++, Java/Kotlin, Python. ARM assembly}
+\item {\textbf{Backend tech:} Spring Boot, Spring Batch, (S)FTP, Kafka, MySQL, HTTP, RESTful API}
+\item {\textbf{Embedded tech:} Serial communications, Signal processing, Touch algorithm, Memory Map}
+\item {\textbf{Others:} AWS, vscode, IntelliJ, Git, SVN, GitHub, GitLab, Gerrit, Jenkins, Circle CI}
+\end{itemize}}
+
+\section{Professional Experience}
+\customcventry{10/2023 ‐ present}{{\color{blue}}{(TW Engineering @ eCommerce engineering)}}{Senior Back-end Engineer,}{Coupang, Inc.}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\item Integration with TW last-mile - Integrated with third-party delivery companies to facilitate customer deliveries in Taiwan. Overcame technical challenges, such as data timeouts during spikes in traffic, and successfully implemented the integration.
+\item Integration with Forwarder, Custom brokers for US/KR to TW Jikgu - Integrate cross-border logistics and customs operations for international trade, collaborating with US, KR, and TW partners to facilitate sales in Taiwan
+\item Integration with ChungHwa Telecom for safety number - Integrate with CHT to protect customers' privacy by replacing their phone number with a secure number.
+\item Implement Multi-AZ environment - Setup resources and make a workflow to deployment for multiple AZs on AWS EC2	for high availability
+\end{itemize}}}
+
+\customcventry{10/2023 ‐ present}{{\color{blue}}{(Coupang Partner Integration Team @ FTS)}}{Senior Back-end Engineer,}{Coupang, Inc.}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\item Integrate with Forwarder, Custom brokers for Rocket Jikgu - Develop a system to streamline import/export \& custom clearance and last-mile delivery for US-KR Rocket Jikgu business. Reduced delivery time from 3 to 2 days, reduced costs, diversified export/import \& customs clearance for KR-TW Jikgu. Refactor codes to support multiple vendors and apply a single interface for improved efficiency.
+\item Writing and running notification logic to send to TW customers - Create a notification service that utilizes shipping information as a trigger to send notifications via a variety of channels, including the Coupang app and SMS.
+\item Integration of insurance for electronic devices - Maintain a system where if a customer purchases an insurance policy with a product, the insurance is activated according to the shipping status of the product and deactivated with the expiration.
+\item Adopt CI pipeline - Integration of Sonarqube and Circle CI in-house with branch strategy
+\item Optimize AWS costs - Reduce AWS costs by optimizing memory for applications in use and changing EC2 instance settings and types.
+\end{itemize}}}
+
+\customcventry{09/2019 ‐ 10/2021}{{\color{blue}}{(Memory Virtual Platform part@Design Verification Team)}}{Engineer,}{Samsung electronics}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\item Based on the User’s manual and SFR document, build an SW working like a controller IC that interacts with FW. This product lets FW development start earlier than FPGA.
+\item Write a test script with the pytest to check functionalities based on NVMe spec, user’s manual, and SFR document.
+\end{itemize}}}
+
+\customcventry{06/2016 ‐ 09/2019}{{\color{blue}}{(Touch algorithm part@Display Solution Dev team)}}{Engineer,}{Samsung electronics}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\item Understand the concept of touch IC and develop an algorithm for accurate coordination and other requirements such as wake-up gestures.
+\item Change algorithm code on the characteristics of each panel of smartphones.
+\item Customer on-site support until mass production on various sites - Samsung, Sony, VIVO, OPPO, etc.
+\item Implement additional features upon request from customers such as side sense for Sony.
+\item Write a test script with the pytest to check functionalities based on the customer's standard.
+\end{itemize}}}
+
+
+\section{Education}
+\customcventry{2010-2014}{\color{blue}\href{https://ewha.ac.kr/ewhaen/index.do}{Ewha Womans University}}{A bachelor's degree}{Seoul, South Korea}{}{}{Relevant Courses: Introduction of digital storytelling, Digital Media Technology, Media Interface, Basic Seminar in Digital Graphics, Digital Media Design, Digital Humanities, Computer Programming \& Lab, Mobile App Programming}
+\customcventry{2012-2013}{\color{blue}\href{https://en.ritsumei.ac.jp/}{Ritsumeikan University}}{Exchange Student}{Kyoto, Japan}{}{}{Study in Kyoto Program 2012}
+
+\section{Languages}
+\begin{multicols}{3}
+    \begin{itemize}[label=\textbullet]
+    \item \textbf{Korean} [Native]
+    \item {\textbf{English} [Fluent]}
+    \item {\textbf{Japanese} [Fluent]}
+    \end{itemize}
+\end{multicols}
+\end{document}
