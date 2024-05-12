@@ -8,10 +8,10 @@ tags:
   - 코딩테스트
 ---
 
-[1편](https://gayuna.github.io/etc/2021/09/25/accidental-trans-1/)  
-[2편](https://gayuna.github.io/etc/2021/10/09/accidental-trans-2/)  
-[3편](https://gayuna.github.io/etc/2021/10/25/accidental-trans-3/)  
-[4편](https://gayuna.github.io/etc/2021/11/02/accidental-trans-4/)
+[1편](https://gayuna.github.io/etc/accidental-trans-1/)  
+[2편](https://gayuna.github.io/etc/accidental-trans-2/)  
+[3편](https://gayuna.github.io/etc/accidental-trans-3/)  
+[4편](https://gayuna.github.io/etc/accidental-trans-4/)
 
 지난 여름 동안 계획에 없었던 이직 루트를 타게 되었습니다. 그 과정에 얻은 게 많아서 이게 다 끝나면 어떤 형태로든 꼭 공유해야겠다고 생각했습니다.
 

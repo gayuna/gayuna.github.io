@@ -8,10 +8,10 @@ tags:
   - 코딩테스트
 ---
 
-[1편](https://gayuna.github.io/etc/2021/09/25/accidental-trans-1/)  
-[2편](https://gayuna.github.io/etc/2021/10/09/accidental-trans-2/)  
-[3편](https://gayuna.github.io/etc/2021/10/25/accidental-trans-3/)  
-[4편](https://gayuna.github.io/etc/2021/11/02/accidental-trans-4/)  
+[1편](https://gayuna.github.io/etc/accidental-trans-1/)  
+[2편](https://gayuna.github.io/etc/accidental-trans-2/)  
+[3편](https://gayuna.github.io/etc/accidental-trans-3/)  
+[4편](https://gayuna.github.io/etc/accidental-trans-4/) 
 
 어떻게 공부했는지는 위 글에 다 있습니다. 이제 언제쯤 무슨 면접을 봤는지 등등에 대한 정보만 나갑니다. 대충 몇일정도 걸린다 같은 느낌 잡는데 유용하셨으면 좋겠어요.
 
