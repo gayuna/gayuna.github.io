@@ -1,7 +1,7 @@
 ---
 title: 지속가능한 스터디 기획하기
 categories:
-  - etc
+  - study
 tags:
   - 스터디
   - 개발스터디
