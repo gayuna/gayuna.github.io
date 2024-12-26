@@ -1,7 +1,7 @@
 ---
 title: 트위터(현 X) 타래 백업기 작업기
 categories:
-  - retrospect
+  - LLM
 tags:
   - 회고
 ---
