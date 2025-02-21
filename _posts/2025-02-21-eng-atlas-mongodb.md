@@ -10,7 +10,7 @@ tags:
 
 #### The Natural Choice: Using a Document Database
 
-When choosing a database to store students' homework at Dangwoo Math, we decided to use MongoDB. Some students submit a 3-minute homework video, while others submit an hour-long one. The audio from these videos is extracted and stored as text, and once stored, it doesn’t require updates. Since each homework submission is independent, relationships between entries are not important, and only simple queries will be needed. Additionally, because we need to store text of varying lengths, using a Document DB was the natural choice.
+When choosing a database to store students' homework at DangwooMath, we decided to use MongoDB. Some students submit a 3-minute homework video, while others submit an hour-long one. The audio from these videos is extracted and stored as text, and once stored, it doesn’t require updates. Since each homework submission is independent, relationships between entries are not important, and only simple queries will be needed. Additionally, because we need to store text of varying lengths, using a Document DB was the natural choice.
 
 #### Getting Started with Atlas
 
@@ -54,6 +54,7 @@ At this stage, you can easily create a read-only account by selecting Only read 
 
 The structure of MongoDB can be explained as follows:
 
+```text
 Cluster
  ├── (Shards)
  │    ├── (Replica Set)
@@ -61,6 +62,7 @@ Cluster
  │    │    │    ├── Database
  │    │    │    │    ├── Collection
  │    │    │    │    │    ├── Document
+ ```
 
  The cluster we created earlier is at the highest level, and within it, data can be sharded and replicated. In the diagram above, Shards, Replica Sets, and Instances represent infrastructure-level concepts, but in the free tier, these configurations cannot be adjusted manually.
 

@@ -54,6 +54,7 @@ Security 아래의 Database Access 항목으로 가 Add new database user를 선
 
 MongoDB의 계층은 다음과 같이 설명될 수 있습니다.
 
+```text
 Cluster
  ├── (Shards)
  │    ├── (Replica Set)
@@ -61,6 +62,7 @@ Cluster
  │    │    │    ├── Database
  │    │    │    │    ├── Collection
  │    │    │    │    │    ├── Document
+ ```
 
 우리가 위에서 만든 클러스터가 가장 상위 계층에 있으며, 이 안에서 데이터는 샤딩과 복제가 가능합니다. 위 표에서 Shard, Replica Set, Instance는 인프라 층위의 개념이지만, 현재 사용 중인 무료 티어에서는 직접 조정할 수 없습니다.
 
@@ -78,7 +80,7 @@ UI에서 파이프라인의 Stage를 추가하면서 각 단계별 출력 결과
 
 ##### MongoDB에서 Index 만들기
 
-MongoDB에서도 SQL과 비슷하게 인덱스를 만들어서 검색 속도를 빠르게 할 수 있습니다. 기본적인 단일 필드, 복합 인덱스부터 [지리 공간에 대한 인덱스도 특수하게 제공](https://www.mongodb.com/ko-kr/docs/manual/core/indexes/index-types/index-geospatial/)하고, 무료 플랜을 벗어난다면 이 인덱스를 샤드 키로 사용하여 샤딩된 클러스터에서 데이터를 분할하는 [해시 샤딩](https://www.mongodb.com/ko-kr/docs/manual/core/hashed-sharding/#std-label-sharding-hashed-sharding) 기능도 제공합니다. 
+MongoDB에서도 SQL과 비슷하게 인덱스를 만들어서 검색 속도를 빠르게 할 수 있습니다. 기본적인 단일 필드, 복합 인덱스부터 [지리 공간에 대한 인덱스도 특수하게 제공]하고, 무료 플랜을 벗어난다면 이 인덱스를 샤드 키로 사용하여 샤딩된 클러스터에서 데이터를 분할하는 [해시 샤딩](https://www.mongodb.com/ko-kr/docs/manual/core/hashed-sharding/#std-label-sharding-hashed-sharding) 기능도 제공합니다. 
 
 다만 MongoDB는 기본적으로 빠른 읽기 속도를 위해 쓰기와 수정을 희생하고 있는데, 인덱스를 남발할 경우 비용이 더 크게 증가할 수 있으므로 자주 사용하는 쿼리에 대해서, 적절한 수준의 인덱스만 거는 것이 중요합니다.
 
