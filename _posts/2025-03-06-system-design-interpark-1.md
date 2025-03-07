@@ -136,3 +136,5 @@ tags:
 이제 Functional Requirements들은 대충 완성한 것 같습니다. 하지만 Non-Functional Requirements를 고려하지 못해서 문제가 있을 것 같습니다. 예를들면 두명이 비슷한 시기에 좌석표를 조회해서 같은 좌석을 예매하려고 시도하는 경우, 둘 중 한명은 예약에 실패해야 합니다.
 
 다음 글에서 예상되는 문제와 해결하기 위해 인터파크가 사용하고 있는 방법들을 살펴보고, Low-level design을 완성해보도록 하겠습니다.
+
+[한국 서비스를 기반으로 시스템 디자인 공부하기 – 인터파크 티켓 (하)](https://gayuna.github.io/system%20design/system-design-interpark-2/)
