@@ -6,6 +6,7 @@ tags:
   - Atlas
   - MongoDB
   - DocumentDB
+  - English
 ---
 
 #### The Natural Choice: Using a Document Database

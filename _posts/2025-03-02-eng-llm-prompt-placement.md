@@ -6,6 +6,7 @@ tags:
   - LLM
   - Prompt
   - Prompt Engineering
+  - English
 ---
 
 With AI evolving rapidly, keeping up with the latest tools and technologies can feel overwhelming. At one point, I considered going to graduate school, but I quickly realized that technology is advancing faster than I could complete a degree. So instead, I decided to focus on using these tools effectively.

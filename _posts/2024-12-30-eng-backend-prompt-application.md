@@ -4,6 +4,7 @@ categories:
   - LLM
 tags:
   - 회고
+  - English
 ---
 
 #### The Beginning of the Story and Simplifying the Front-End with No-Code Tools

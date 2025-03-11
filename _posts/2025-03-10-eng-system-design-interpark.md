@@ -3,7 +3,7 @@ title: A Backend Redesign Exercise - Interpark Ticket
 categories:
   - System Design
 tags:
-  - 
+  - English
 ---
 
 When studying system design, most resources are written in English and primarily focus on English-speaking services. As a result, Korean developers often face an additional challenge—not only do they need to understand system design concepts, but they also have to familiarize themselves with the services being discussed. This can make the learning process more complex. To address this, this post will explore system design using a well-known Korean service as a base while also drawing connections to similar international services.
