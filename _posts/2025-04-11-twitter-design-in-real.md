@@ -46,13 +46,13 @@ document 2:
 
 이런식으로 만들어집니다. 나중에 만약 유저가 '토론토'로 검색을 한다면 이 역색인을 보고 1,2번 문서를 빠르게 리턴해줄 수 있습니다. 그리고 이를 시간 역순으로 유지하기 위해 트위터는 작성 시각을 사용해서 문서 ID(이후 docId)를 만들었습니다. 27비트는 글이 작성된 시각을 최대값에서 뺀 값으로 만들고, 나머지 4비트는 동일한 시간에 작성된 포스팅을 구분하기 위한 카운터값으로 사용합니다. 식으로 작성한다면 `docId = (max_possible_timestamp - current_timestamp) << 4 | counter`과 같이 표현됩니다. 27비트로만 시간을 표현하기 때문에 상위 정보값이 사라져서 긴 기간을 저장한다면 충돌이 일어나겠지만, Lucene 자체가 segment별로 나눠서 관리하고 각 segment 안에서만 docId가 고유하면 되기 때문에 상관이 없습니다.
 
-이제 역색인에 대해 파악했으니 저 역색인이 doId를 어떤식으로 저장하는지 알아야합니다. 그리고 이 구조의 개선이 2020년 블로그 포스트에서 말하는 색인에 15초가 걸리던걸 1초로 개선할 수 있었던 주요 포인트입니다.
+이제 역색인에 대해 파악했으니 저 역색인이 docId를 어떤식으로 저장하는지 알아야합니다. 그리고 이 구조의 개선이 2020년 블로그 포스트에서 말하는 색인에 15초가 걸리던걸 1초로 개선할 수 있었던 주요 포인트입니다.
 
 #### Skip List의 도입
 
 ![Image](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/engineering/en_us/infrastructure/2020/reducingsearchlatency/unrolled_linked.png.img.fullhd.medium.png)
 
-`서울특별시: [1,2]` 예시에서 `[1,2]` 처럼 docId를 저장하고 있는 것을 Lucene에서는 `posting list`라고 부릅니다. 트위터에서는 2020년 이전에는 document id를 `Unrolled Linked List`로 저장했다고 합니다. 이는 Linked List 중에서도 각 노드가 값 여러 개를 배열로 저장하는 구조입니다. 새로운 값이 항상 Head에 저장되는 방식으로 매우 빠르게(O(n)) 새 노드를 추가할 수 있어 최신 포스팅을 먼저 보여주는 타임라인에 적합하다고 볼 수 있습니다. 하지만 중간에 삽입하는데는 비교적 비용이 많이 들기 때문에, 포스팅이 순서대로 오지 않는다면 적합하지 않은 자료구조였습니다.
+`서울특별시: [1,2]` 예시에서 `[1,2]` 처럼 docId를 저장하고 있는 것을 Lucene에서는 `posting list`라고 부릅니다. 트위터에서는 2020년 이전에는 docId를 `Unrolled Linked List`로 저장했다고 합니다. 이는 Linked List 중에서도 각 노드가 값 여러 개를 배열로 저장하는 구조입니다. 새로운 값이 항상 Head에 저장되는 방식으로 매우 빠르게(O(1)) 새 노드를 추가할 수 있어 최신 포스팅을 먼저 보여주는 타임라인에 적합하다고 볼 수 있습니다. 하지만 중간에 삽입하는데는 비교적 비용이 많이 들기 때문에, 포스팅이 순서대로 오지 않는다면 적합하지 않은 자료구조였습니다.
 
 ![Image](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/engineering/en_us/infrastructure/2020/reducingsearchlatency/skiplist_index_pointers.png.img.fullhd.medium.png)
 
