@@ -5,6 +5,7 @@ categories:
 tags:
   - AI
   - 후기
+  - English
 ---
 
 ## 1. Why We Started This Project
