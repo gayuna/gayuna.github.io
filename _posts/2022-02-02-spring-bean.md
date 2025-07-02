@@ -1,7 +1,7 @@
 ---
 title: 의존성 주입(DI)과 Spring Bean
 categories:
-  - spring
+  - Technologies
 tags:
   - spring
   - java

@@ -1,7 +1,7 @@
 ---
 title: Spring JPA의 영속성와 Proxy
 categories:
-  - spring
+  - Technologies
 tags:
   - spring
   - JPA

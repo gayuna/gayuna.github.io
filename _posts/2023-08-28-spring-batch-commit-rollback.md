@@ -1,7 +1,7 @@
 ---
 title: Spring batch에서 나는 error handling을 했는데 rollback only라며 에러가 날 때
 categories:
-  - spring
+  - Technologies
 tags:
   - spring
   - JPA

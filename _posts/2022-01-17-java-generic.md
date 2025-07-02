@@ -1,7 +1,7 @@
 ---
 title: JAVA - Generic
 categories:
-  - java
+  - Technologies
 tags:
   - java
 ---
