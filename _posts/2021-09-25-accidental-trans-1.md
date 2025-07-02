@@ -63,7 +63,8 @@ tags:
 
 ##### mock interview 하기 - pramp.com
 
-제게 가장 급한 것은 멘붕 상태를 막는 것이었습니다. 이걸 위해 저는 [pramp.com](https://www.pramp.com/invt/yBBpjO3J0qUNmajX353W) 사이트를 이용했습니다. 
+제게 가장 급한 것은 멘붕 상태를 막는 것이었습니다. 이걸 위해 저는 pramp 사이트를 이용했습니다. 
+수정: pramp가 리브랜딩 밎 이전했습니다. [exponent](https://www.tryexponent.com/refer/egzgbe)에서 mock interview를 해보실 수 있습니다.
 
 ![1](https://user-images.githubusercontent.com/8686251/134765105-ee3fa5bb-811e-4213-bb27-81ad710ba389.png)
 ![2](https://user-images.githubusercontent.com/8686251/134765113-b9ce863f-a8cb-4501-b491-3b945605b204.png)
